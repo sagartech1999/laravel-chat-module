@@ -23,5 +23,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/chat', [MesssageController::class, 'index'])->name('chat');
+Route::post('/pusher/auth', [MesssageController::class, 'pusherAuth'])->name('pusher.auth');
 
 require __DIR__.'/auth.php';
